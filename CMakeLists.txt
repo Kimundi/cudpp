@@ -25,28 +25,29 @@ option(CUDA_VERBOSE_PTXAS
 
 ## Set the directory where the binaries will be stored
 set(EXECUTABLE_OUTPUT_PATH
-  ${PROJECT_BINARY_DIR}/bin
+  ${CMAKE_CURRENT_BINARY_DIR}/bin
   CACHE PATH
   "Directory where all executables will be stored"
   )
 
 ## Set the directory where the libraries will be stored
 set(LIBRARY_OUTPUT_PATH
-  ${PROJECT_BINARY_DIR}/lib
+  ${CMAKE_CURRENT_BINARY_DIR}/lib
   CACHE PATH
   "Directory where all the libraries will be stored"
   )
 
 set(CMAKE_MODULE_PATH
-  ${CMAKE_SOURCE_DIR}/cmake
+  ${CMAKE_CURRENT_SOURCE_DIR}/cmake
   )
 
 set(cudpp_INCLUDE_DIRS
-  ${CMAKE_SOURCE_DIR}/include
-  ${CMAKE_SOURCE_DIR}/ext/moderngpu/include/
-  ${CMAKE_SOURCE_DIR}/ext/cub/
+  ${CMAKE_CURRENT_SOURCE_DIR}/include
+  ${CMAKE_SOURCE_DIR}/external/old_moderngpu/include/
+  ${CMAKE_SOURCE_DIR}/external/cub/
   )
 include_directories(${cudpp_INCLUDE_DIRS})
+message("${CMAKE_CURRENT_SOURCE_DIR}")
 
 if (CMAKE_SIZEOF_VOID_P EQUAL 8)
   set(bits 64)
@@ -76,7 +77,7 @@ configure_file(
   )
 
 set (CUDPP_APP_DATA_DIR
-  "${CMAKE_SOURCE_DIR}/apps/data/"
+  "${CMAKE_CURRENT_SOURCE_DIR}/apps/data/"
   )
 configure_file(
   ${CMAKE_CURRENT_SOURCE_DIR}/apps/common/include/common_config.h.in
