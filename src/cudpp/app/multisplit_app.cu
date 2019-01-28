@@ -23,6 +23,7 @@
  * @{
  */
 #include <cub/cub.cuh>
+#include "cub/util_allocator.cuh"
 #include "cuda_util.h"
 #include "cudpp.h"
 #include "cudpp_util.h"
@@ -1924,7 +1925,7 @@ cub::CachingDeviceAllocator g_allocator(true); // Caching allocator for device m
 /** @brief Performs multisplit on keys only using the reduced-bit sort method.
  *
  *
- * This function uses radix sort to perform a multisplit. It is suitable 
+ * This function uses radix sort to perform a multisplit. It is suitable
  * when the number of buckets is large.
  *
  * @param[in,out] d_inp Keys to be multisplit.
@@ -1967,7 +1968,7 @@ void reducedBitSortKeysOnly(unsigned int *d_inp, uint numElements,
 /** @brief Performs multisplit on key-value pairs using a reduced-bit sort.
  *
  *
- * This function uses radix sort to perform a multisplit on a list of keys 
+ * This function uses radix sort to perform a multisplit on a list of keys
  * and a list of values. It is suitable when the number of buckets is large.
  *
  * @param[in,out] d_keys Keys to be multisplit.
