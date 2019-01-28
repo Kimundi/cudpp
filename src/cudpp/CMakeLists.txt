@@ -15,10 +15,10 @@ include_directories(
   )
 
 set(CCFILES
-  cudpp.cpp
-  cudpp_plan.cpp
-  cudpp_manager.cpp
-  ${CMAKE_SOURCE_DIR}/external/old_moderngpu/src/mgpuutil.cpp
+  cudpp.cu
+  cudpp_plan.cu
+  cudpp_manager.cu
+  ${CMAKE_SOURCE_DIR}/external/old_moderngpu/src/mgpuutil.cu
   )
 
 set (HFILES
