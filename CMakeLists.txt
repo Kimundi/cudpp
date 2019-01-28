@@ -1,4 +1,4 @@
-project(cudpp)
+project(cudpp LANGUAGES CXX CUDA)
 
 set(cudpp_VERSION_MAJOR 2)
 set(cudpp_VERSION_MINOR 3)
@@ -6,7 +6,7 @@ set(cudpp_VERSION_PATCH 0)
 
 cmake_minimum_required(VERSION 2.8)
 
-find_package(CUDA REQUIRED)
+#find_package(CUDA REQUIRED)
 
 option(CUDPP_BUILD_SHARED_LIBS
   "On to build shared libraries, off for static libraries."

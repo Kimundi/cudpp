@@ -133,13 +133,13 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
   # https://github.com/cudpp/cudpp/wiki/BuildingCUDPPWithMavericks
 endif(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
 
-cuda_add_library(cudpp_hash ${LIB_TYPE}
+add_library(cudpp_hash ${LIB_TYPE}
   ${CCFILES}
   ${HFILES}
   ${CUHFILES}
   ${HFILES_PUBLIC}
   ${CUFILES}
-  OPTIONS ${GENCODE_SM20} ${VERBOSE_PTXAS}
+#  OPTIONS ${GENCODE_SM20} ${VERBOSE_PTXAS}
   )
 
 target_link_libraries(cudpp_hash cudpp)

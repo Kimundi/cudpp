@@ -184,13 +184,13 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
   # https://github.com/cudpp/cudpp/wiki/BuildingCUDPPWithMavericks
 endif(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
 
-cuda_add_library(cudpp ${LIB_TYPE}
+add_library(cudpp ${LIB_TYPE}
   ${CCFILES}
   ${HFILES}
   ${CUHFILES}
   ${HFILES_PUBLIC}
   ${CUFILES}
-  OPTIONS ${GENCODE} ${VERBOSE_PTXAS}
+#  OPTIONS ${GENCODE} ${VERBOSE_PTXAS}
   )
 
 install(FILES ${HFILES_PUBLIC}
